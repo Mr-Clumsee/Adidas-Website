@@ -7,9 +7,17 @@ dotenv.config();
 
 // start server
 const app = express();
+// const cors = require('cors')
+
 
 app.use(express.static("public"));   // all client side code living in public folder
 app.use(express.json());
+
+// using cors
+// app.use(cors)({
+//     origin: "https://benevolent-entremet-76c888.netlify.app/"
+// })
+
 
 // home route
 app.get("/",(req, res) => {
