@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import stripe from 'stripe';
 
-const base_url = "https://adidas-shop-e.netlify.app/";
+// const base_url = "https://adidas-shop-e.netlify.app/";
 // load variables
 dotenv.config();
 
@@ -72,6 +72,11 @@ app.post("/stripe-checkout", async (req, res) => {
     res.json(session.url);
 });
 
-app.listen(`${base_url}`, () => {
-    console.log("listening on port 3000;");
+app = require('http').createServer();
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log(`Listening on ${port}`));
+
+// app.listen(`${base_url}`, () => {
+//     console.log("listening on port 3000;");
 });
