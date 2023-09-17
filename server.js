@@ -72,7 +72,7 @@ app.post("/stripe-checkout", async (req, res) => {
     res.json(session.url);
 });
 
-app = require('http').createServer();
+// app = require('http').createServer();
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Listening on ${port}`));
